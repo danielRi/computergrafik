@@ -10,24 +10,23 @@
 
  
  class Pixel{
- 	public:
- 		Pixel();
- 		Pixel(int red, int green, int blue);
- 		void setRed(int red);
- 		void setGreen(int green);
- 		void setBlue(int blue);
- 		
- 		int getRed();
- 		int getGreen();
- 		int getBlue();
+ public:
+ 	Pixel();
+ 	Pixel(int red, int green, int blue);
+ 	void setRed(int red);
+ 	void setGreen(int green);
+ 	void setBlue(int blue);
+ 	void setColor(int r, int g, int b);
+ 	int getRed();
+ 	int getGreen();
+ 	int getBlue();
+ 	bool isChanged();
  	
- 	private:
- 		int red;
- 		int green;
- 		int blue;
- 		bool hasBeenChanged;
- 	
- 	 
+ private:
+ 	int red;
+ 	int green;
+ 	int blue;
+ 	bool hasBeenChanged;
  };
  
  #endif
