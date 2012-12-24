@@ -20,7 +20,6 @@
  	int getRed();
  	int getGreen();
  	int getBlue();
- 	void setChanged(bool aValue);
  	bool isChanged();
  	int getX();
  	int getY();

@@ -73,7 +73,6 @@ void Image::setPixel(Pixel aPixel){
 	int tX = aPixel.getX();
 	int tY = aPixel.getY();
 	std::vector < Pixel > &row = imageData.at(tY);
-	aPixel.setChanged(true);
 	row.at(tX).setRed(aPixel.getRed());
 	row.at(tX).setGreen(aPixel.getGreen());
 	row.at(tX).setBlue(aPixel.getBlue());	

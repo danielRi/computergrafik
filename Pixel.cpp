@@ -69,8 +69,5 @@ int Pixel::getY(){
 	return y;
 }
 
-void Pixel::setChanged(bool aValue){
-	hasBeenChanged = aValue;
-}
 
  
