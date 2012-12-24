@@ -15,10 +15,11 @@ class Image{
 
 public:
 	Image();
-	Image(int x, int y);
+	Image(int width, int height);
 	void saveAsPixelMap(char[]);	
 	int getHeight();
 	int getWidth();
+	void setPixel(Pixel aPixel);
 private:
 	std::vector< std::vector<Pixel> > imageData;
 	int height;

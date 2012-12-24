@@ -11,8 +11,8 @@
  
  class Pixel{
  public:
- 	Pixel();
- 	Pixel(int red, int green, int blue);
+ 	Pixel(int x, int y);
+ 	Pixel(int red, int green, int blue, int x, int y);
  	void setRed(int red);
  	void setGreen(int green);
  	void setBlue(int blue);
@@ -20,12 +20,16 @@
  	int getRed();
  	int getGreen();
  	int getBlue();
+ 	void setChanged(bool aValue);
  	bool isChanged();
- 	
+ 	int getX();
+ 	int getY();
  private:
  	int red;
  	int green;
  	int blue;
+ 	int x;
+ 	int y;
  	bool hasBeenChanged;
  };
  

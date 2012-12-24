@@ -15,12 +15,29 @@ Image::Image(){
 		row.clear();
 		for(int j = 0; j < tWidth; j++){
 			
-			row.push_back(Pixel(255,255,255));
+			row.push_back(Pixel(255,255,255,j,i));
 		}
 		
 		imageData.push_back(row);	
 	}
 	
+}
+
+Image::Image(int aWidth, int aHeight){
+	if (width<=0 || height<= 0){
+		std::cout << "\n Image Constructor: Error - Invalid size. Width and height must be greater 0 \n ";
+	}else{
+		height = aHeight;
+		width = aWidth;
+		std::vector < Pixel > row;
+		for(int i = 0; i < aHeight; i++){
+			row.clear();
+			for(int j = 0; j < aWidth; j++){
+				row.push_back(Pixel(255,255,255, j, i));
+			}
+			imageData.push_back(row);	
+		}
+	}
 }
 
 int Image::getHeight(){
@@ -50,4 +67,14 @@ void Image::saveAsPixelMap(char aPath[]){
 	}
 	std::cout << "\n Writing File to " << aPath << "\n \n";
 	myfile.close();
+}
+
+void Image::setPixel(Pixel aPixel){
+	int tX = aPixel.getX();
+	int tY = aPixel.getY();
+	std::vector < Pixel > &row = imageData.at(tY);
+	aPixel.setChanged(true);
+	row.at(tX).setRed(aPixel.getRed());
+	row.at(tX).setGreen(aPixel.getGreen());
+	row.at(tX).setBlue(aPixel.getBlue());	
 }

@@ -5,17 +5,21 @@
  
 #include "Pixel.h"
 
-Pixel::Pixel(){
+Pixel::Pixel(int tx, int ty){
 	red = 255;
-	green = 255;
-	blue = 255;
+	green = 0;
+	blue = 0;
+	x = tx;
+	y = ty;
 	hasBeenChanged = false;
 }
 
-Pixel::Pixel(int r, int g, int b){
+Pixel::Pixel(int r, int g, int b, int tx, int ty){
 	red = r;
 	green = g;
 	blue = b;
+	x = tx;
+	y = ty;
 	hasBeenChanged = false;
 }
 
@@ -55,6 +59,18 @@ int Pixel::getBlue(){
 
 bool Pixel::isChanged(){
 	return hasBeenChanged;
+}
+
+int Pixel::getX(){
+	return x;
+}
+
+int Pixel::getY(){
+	return y;
+}
+
+void Pixel::setChanged(bool aValue){
+	hasBeenChanged = aValue;
 }
 
  

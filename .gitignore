@@ -1,3 +1,6 @@
 *.gch
 *~
 *.out
+*.mshark
+*.txt
+*.dSYM
