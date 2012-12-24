@@ -37,10 +37,8 @@ void Image::saveAsPixelMap(char aPath[]){
 	myfile.open(aPath);
 	
 	myfile << "P3\n" << this->getWidth() <<" "<< this->getHeight() <<"\n255\n";
-	std::cout << " \n Image Data: \n";
 	std::vector < Pixel > row;
 	for (int y = 0; y < this->getHeight(); y++){
-		std::cout << "\n" ;
 		row = imageData.at(y);
 		for (int x = 0; x < this->getWidth(); x++){
             
