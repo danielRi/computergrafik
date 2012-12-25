@@ -77,3 +77,17 @@ void Image::setPixel(Pixel aPixel){
 	row.at(tX).setGreen(aPixel.getGreen());
 	row.at(tX).setBlue(aPixel.getBlue());	
 }
+
+void Image::drawLine(Line aLine){
+
+}
+
+std::vector<Vertex*> Image::getVertices(){
+	return vertices;
+}
+
+void addVertex(Vertex* aVertex){
+
+}
+
+
