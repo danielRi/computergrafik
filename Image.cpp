@@ -87,7 +87,7 @@ void Image::setPixel(Pixel* aPixel){
 }
 
 void Image::drawLine(Line aLine){
-
+	
 }
 
 std::vector<Vertex*> Image::getVertices(){
