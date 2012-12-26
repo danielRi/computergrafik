@@ -21,11 +21,11 @@ public:
 	void saveAsPixelMap(char[]);	
 	int getHeight();
 	int getWidth();
-	void setPixel(Pixel aPixel);
+	void setPixel(Pixel *aPixel);
 	void drawLine(Line aLine);
 	std::vector<Vertex*> getVertices();
 private:
-	std::vector< std::vector<Pixel> > imageData;
+	std::vector< std::vector<Pixel*> > imageData;
 	int height;
 	int width;
 	std::vector <Vertex*> vertices;
