@@ -12,15 +12,19 @@ using namespace std;
 int main(int argc, char* argv[]){
 	
 	cout << "Starting...\n";
-	Image theImage(4, 8);
+	Image theImage(40, 80);
 	
-	Pixel aPixel(2,1);
+	Pixel aPixel(20,10);
 	Pixel aPixel2(2,7);
-	Pixel aPixel3(1,7);
+	Pixel aPixel3(10,70);
+	Pixel aPixel4(39,50);
 	Pixel* p = &aPixel;
 	theImage.setPixel(p);
 	theImage.setPixel(&aPixel2);
 	theImage.setPixel(&aPixel3);
+	
+	Line aLine(aPixel2, aPixel4);
+	theImage.drawLine(&aLine);
 	
 	aPixel.setBlue(255);
 	aPixel.setRed(0);

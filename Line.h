@@ -19,9 +19,13 @@ public:
 	int getSlowDirection();
 	char getFastAxis();
 	char getSlowAxis();
+	int getDx();
+	int getDy();
 private:
 	Pixel start;
 	Pixel end;
+	int dX;
+	int dY;
 	std::vector <Pixel*> lineData;
 	int fastDirection;
 	int slowDirection;
