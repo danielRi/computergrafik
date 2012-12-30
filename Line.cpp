@@ -38,7 +38,7 @@ void Line::determineBresenhamDirections(){
 		//1. and 2. Octant
 		dx = abs(dx);
 		dy = abs(dy);
-		if(dx > dy){
+		if(dx >= dy){
 			fastDirection = 1;
 			slowDirection = -1;
 			fastAxis = 'x';
@@ -55,7 +55,7 @@ void Line::determineBresenhamDirections(){
 		//3. and 4. Octant
 		dx = abs(dx);
 		dy = abs(dy);
-		if(dx > dy){
+		if(dx >= dy){
 			fastDirection = 1;
 			slowDirection = 1;
 			fastAxis = 'x';
@@ -72,7 +72,7 @@ void Line::determineBresenhamDirections(){
 		//5. and 6. Octant
 		dx = abs(dx);
 		dy = abs(dy);
-		if(dx > dy){
+		if(dx >= dy){
 			fastDirection = -1;
 			slowDirection = 1;
 			fastAxis = 'x';
@@ -89,7 +89,7 @@ void Line::determineBresenhamDirections(){
 		//7. and 8. Octant
 		dx = abs(dx);
 		dy = abs(dy);
-		if(dx > dy){
+		if(dx >= dy){
 			fastDirection = -1;
 			slowDirection = -1;
 			fastAxis = 'x';
@@ -121,7 +121,7 @@ void Line::determineBresenhamDirections(){
 			slowDirection = 0;
 			fastAxis = 'y';
 			slowAxis = 'x'; 
-		}else if(dx > 0){
+		}else if(dy > 0){
 			fastDirection = 1;
 			slowDirection = 0;
 			fastAxis = 'y';

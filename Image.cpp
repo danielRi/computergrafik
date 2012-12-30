@@ -141,7 +141,51 @@ void Image::drawLine(Line *aLine){
 		}
 		std::cout << "errorvar: "<<error;
 	}
+	Pixel *end = new Pixel(aLine->getEnd().getX(),aLine->getEnd().getY());
+	std::cout << "red: " << aLine->getEnd().getRed() << " green: " << aLine->getEnd().getGreen() << " blue: " << aLine->getEnd().getBlue();
+	setPixel(end);
 	
+}
+
+void Image::drawLineMidpoint(Line* aLine){
+	int f1, s1, error, diff, sDiff;
+	int dx = aLine->getDx();
+	int dy = aLine->getDy();
+	
+	int fastDirection = aLine->getFastDirection();
+	int slowDirection = aLine->getSlowDirection();
+	int fastAxis = aLine->getFastAxis();
+	if(fastAxis=='x'){
+		f1 = aLine->getStart().getX();
+		s1 = aLine->getStart().getY();
+		error = abs(dy) - abs(dx)/2;
+		diff = abs(dx);
+		sDiff = abs(dy);
+	}else if(fastAxis=='y'){
+		f1 = aLine->getStart().getY();
+		s1 = aLine->getStart().getX();
+		error = abs(dx) - abs(dy)/2;
+		diff = abs(dy);
+		sDiff = abs(dx);
+	}
+	
+	for(int i = 1;i <= diff; i++){
+		Pixel *p;
+		if(fastAxis=='x'){
+			p = new Pixel(f1, s1);
+		}else{
+			p = new Pixel(s1, f1);
+		}
+		setPixel(p);
+		f1 += fastDirection;
+		if(error > 0){
+			s1 += slowDirection;
+			error -= diff;
+		}
+		error += sDiff;
+	}
+	Pixel *end = new Pixel(aLine->getEnd().getX(),aLine->getEnd().getY());
+	setPixel(end);
 }
 
 std::vector<Vertex*> Image::getVertices(){
